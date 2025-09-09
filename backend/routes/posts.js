@@ -1,0 +1,9 @@
+const express = require('express');
+const router = express.Router();
+const postsController = require('../controllers/postsController');
+
+router.get('/', postsController.getPosts);
+router.get('/sync', postsController.syncWithReddit);
+router.get('/:id', postsController.getPost);
+
+module.exports = router;
